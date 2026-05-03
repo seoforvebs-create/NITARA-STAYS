@@ -54,16 +54,134 @@
       position: absolute;
       inset: 0;
       background: linear-gradient(
-        to bottom,
-        rgba(10,10,10,0.35) 0%,
-        rgba(10,10,10,0.20) 50%,
+        135deg,
+        rgba(10,10,10,0.72) 0%,
+        rgba(10,10,10,0.55) 40%,
         rgba(10,10,10,0.65) 100%
       );
       z-index: 2;
     }
-    .hero-content,
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      text-align: center !important;
+      display: flex;
+      flex-direction: column;
+      align-items: center !important;
+      justify-content: center;
+      width: 100%;
+      padding: 0 24px;
+      box-sizing: border-box;
+    }
+    .hero-eyebrow,
+    .hero-title,
+    .hero-sub {
+      text-align: center !important;
+      width: 100%;
+    }
+    .hero-ctas {
+      display: flex;
+      gap: 16px;
+      justify-content: center !important;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
     .hero-scroll-hint,
     .hero-location { position: relative; z-index: 3; }
+
+    /* ─── Explore Section ─── */
+    .explore-section {
+      background: var(--charcoal, #1a1a1a);
+      padding: 80px 48px;
+    }
+    .explore-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+    }
+    .explore-header {
+      text-align: center;
+      margin-bottom: 52px;
+    }
+    .explore-header .section-label { color: var(--gold, #C8A96E); }
+    .explore-header .section-title { color: var(--white, #fff); }
+    .explore-header .section-divider { margin: 16px auto; }
+    .explore-header .section-subtitle { color: rgba(255,255,255,0.55); margin: 0 auto; text-align: center; }
+    .explore-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+    .explore-card {
+      position: relative;
+      overflow: hidden;
+      height: 320px;
+      display: block;
+      text-decoration: none;
+    }
+    .explore-card img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s ease;
+      filter: brightness(0.65);
+    }
+    .explore-card:hover img {
+      transform: scale(1.06);
+      filter: brightness(0.5);
+    }
+    .explore-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(10,10,10,0.85) 0%, transparent 60%);
+    }
+    .explore-card-body {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 28px 24px;
+      z-index: 2;
+    }
+    .explore-card-label {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold, #C8A96E);
+      margin-bottom: 6px;
+    }
+    .explore-card-title {
+      font-family: var(--font-serif, Georgia, serif);
+      font-size: 1.25rem;
+      font-weight: 300;
+      color: var(--white, #fff);
+      line-height: 1.3;
+      margin-bottom: 10px;
+    }
+    .explore-card-arrow {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      transition: color 0.2s, padding-left 0.2s;
+    }
+    .explore-card:hover .explore-card-arrow {
+      color: var(--gold, #C8A96E);
+      padding-left: 6px;
+    }
+    .explore-cta-wrap {
+      text-align: center;
+      margin-top: 44px;
+    }
+
+    @media (max-width: 900px) {
+      .explore-grid { grid-template-columns: repeat(2, 1fr); }
+      .explore-section { padding: 60px 24px; }
+    }
+    @media (max-width: 600px) {
+      .explore-grid { grid-template-columns: 1fr; }
+      .explore-card { height: 260px; }
+      .hero-ctas { flex-direction: column; align-items: center; gap: 12px; }
+      .hero-ctas a { width: 100%; max-width: 280px; text-align: center; }
+    }
   </style>
 </head>
 <body>
@@ -108,15 +226,13 @@
 <!-- ─── HERO ─── -->
 <section class="hero" aria-label="Hero banner">
 
-  <!-- Fallback image shown until video loads -->
   <div class="hero-image-bg" id="hero-image-bg"></div>
 
-  <!-- YouTube Video Background -->
   <div class="hero-video-wrap">
     <iframe
       id="hero-video-iframe"
       class="hero-video-iframe"
-      src="https://www.youtube.com/embed/CUIdMusnugs?autoplay=1&mute=1&loop=1&playlist=CUIdMusnugs&controls=0&showinfo=0&rel=0&playsinline=1&modestbranding=1&disablekb=1&iv_load_policy=3&enablejsapi=1"
+      src="https://www.youtube.com/embed/ZDO-b1uwRGM?autoplay=1&mute=1&loop=1&playlist=ZDO-b1uwRGM&controls=0&showinfo=0&rel=0&playsinline=1&modestbranding=1&disablekb=1&iv_load_policy=3&start=5400"
       frameborder="0"
       allow="autoplay; fullscreen"
       allowfullscreen
@@ -233,6 +349,84 @@
     </div>
   </div>
 </div>
+
+<!-- ─── EXPLORE NEARBY ─── -->
+<section class="explore-section" aria-labelledby="explore-heading">
+  <div class="explore-inner">
+    <div class="explore-header">
+      <p class="section-label">Beyond the Retreat</p>
+      <h2 class="section-title" id="explore-heading">Explore <em>The Kumaon</em></h2>
+      <div class="section-divider"></div>
+      <p class="section-subtitle">Ancient temples, sacred forests, hidden waterfalls — the Kumaon Himalaya holds centuries of wonder just beyond your door.</p>
+    </div>
+    <div class="explore-grid">
+
+      <a href="destinations.html#mukteshwar-temple" class="explore-card reveal">
+        <img src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&q=80" alt="Mukteshwar Temple Uttarakhand" loading="lazy" />
+        <div class="explore-card-overlay"></div>
+        <div class="explore-card-body">
+          <p class="explore-card-label">Sacred · 2,286m</p>
+          <h3 class="explore-card-title">Mukteshwar Temple</h3>
+          <span class="explore-card-arrow">Explore →</span>
+        </div>
+      </a>
+
+      <a href="destinations.html#chauli-ki-jali" class="explore-card reveal reveal-delay-1">
+        <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80" alt="Chauli Ki Jali Mukteshwar cliff" loading="lazy" />
+        <div class="explore-card-overlay"></div>
+        <div class="explore-card-body">
+          <p class="explore-card-label">Adventure · Rock Face</p>
+          <h3 class="explore-card-title">Chauli Ki Jali</h3>
+          <span class="explore-card-arrow">Explore →</span>
+        </div>
+      </a>
+
+      <a href="destinations.html#jageshwar-dham" class="explore-card reveal reveal-delay-2">
+        <img src="https://images.unsplash.com/photo-1609766857413-5b44c7d0b47d?w=800&q=80" alt="Jageshwar Dham ancient Shiva temples" loading="lazy" />
+        <div class="explore-card-overlay"></div>
+        <div class="explore-card-body">
+          <p class="explore-card-label">Heritage · 9th Century</p>
+          <h3 class="explore-card-title">Jageshwar Dham</h3>
+          <span class="explore-card-arrow">Explore →</span>
+        </div>
+      </a>
+
+      <a href="destinations.html#kasar-devi" class="explore-card reveal reveal-delay-3">
+        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80" alt="Kasar Devi temple Almora Uttarakhand" loading="lazy" />
+        <div class="explore-card-overlay"></div>
+        <div class="explore-card-body">
+          <p class="explore-card-label">Spiritual · Almora</p>
+          <h3 class="explore-card-title">Kasar Devi</h3>
+          <span class="explore-card-arrow">Explore →</span>
+        </div>
+      </a>
+
+      <a href="destinations.html#bhalugaad-waterfall" class="explore-card reveal reveal-delay-4">
+        <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800&q=80" alt="Bhalugaad waterfall Mukteshwar" loading="lazy" />
+        <div class="explore-card-overlay"></div>
+        <div class="explore-card-body">
+          <p class="explore-card-label">Nature · Hidden Falls</p>
+          <h3 class="explore-card-title">Bhalugaad Waterfall</h3>
+          <span class="explore-card-arrow">Explore →</span>
+        </div>
+      </a>
+
+      <a href="destinations.html#kainchi-dham" class="explore-card reveal reveal-delay-5">
+        <img src="https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?w=800&q=80" alt="Kainchi Dham ashram Nainital" loading="lazy" />
+        <div class="explore-card-overlay"></div>
+        <div class="explore-card-body">
+          <p class="explore-card-label">Devotion · Nainital</p>
+          <h3 class="explore-card-title">Kainchi Dham</h3>
+          <span class="explore-card-arrow">Explore →</span>
+        </div>
+      </a>
+
+    </div>
+    <div class="explore-cta-wrap">
+      <a href="destinations.html" class="btn-gold">View All Destinations ✦</a>
+    </div>
+  </div>
+</section>
 
 <!-- ─── TESTIMONIALS ─── -->
 <section class="testimonials-section" aria-labelledby="test-heading">
@@ -408,12 +602,12 @@
     <div class="footer-col">
       <p class="footer-col-title">Explore</p>
       <ul role="list">
-        <li><a href="#">Mukteshwar Temple</a></li>
-        <li><a href="#">Chauli Ki Jali</a></li>
-        <li><a href="#">Jageshwar Dham</a></li>
-        <li><a href="#">Kasar Devi</a></li>
-        <li><a href="#">Bhalugaad Waterfall</a></li>
-        <li><a href="#">Kainchi Dham</a></li>
+        <li><a href="destinations.html#mukteshwar-temple">Mukteshwar Temple</a></li>
+        <li><a href="destinations.html#chauli-ki-jali">Chauli Ki Jali</a></li>
+        <li><a href="destinations.html#jageshwar-dham">Jageshwar Dham</a></li>
+        <li><a href="destinations.html#kasar-devi">Kasar Devi</a></li>
+        <li><a href="destinations.html#bhalugaad-waterfall">Bhalugaad Waterfall</a></li>
+        <li><a href="destinations.html#kainchi-dham">Kainchi Dham</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -479,8 +673,6 @@
     const iframe  = document.getElementById('hero-video-iframe');
     const imageBg = document.getElementById('hero-image-bg');
     if (!iframe || !imageBg) return;
-
-    // Fade in video and fade out image after 2s (video has started by then)
     setTimeout(function () {
       iframe.classList.add('loaded');
       imageBg.classList.add('hidden');
