@@ -8,42 +8,42 @@ const STATIC_DESTINATIONS = [
     id: 1, name: 'The Dhanachuli House', category: 'Mountain',
     tagline: 'Perched above the clouds',
     description: 'A private mountain house with floor-to-ceiling windows framing the full Himalayan arc — from Nanda Devi to Trishul. Wake to pink-gold peaks.',
-    image_url: 'https://www.genspark.ai/api/files/s/9dBT4k1w',
+    image_url: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&q=80',
     price_per_night: 18500, rating: 5.0
   },
   {
     id: 2, name: 'The Forest Terrace', category: 'Forest',
     tagline: 'Oak canopy, infinite sky',
     description: 'Nestled within a dense oak and rhododendron forest at 2,100m. A terrace villa where morning mist and birdsong replace alarm clocks.',
-    image_url: 'https://www.genspark.ai/api/files/s/aIdMy56z',
+    image_url: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80',
     price_per_night: 14500, rating: 4.9
   },
   {
     id: 3, name: 'The Summit Suite', category: 'Mountain',
     tagline: '180° Himalayan panorama',
     description: 'The crown jewel of Nitara Stays. A panoramic suite at elevation with a private deck offering unobstructed views of Panchachuli, Kedarnath and Nanda Kot.',
-    image_url: 'https://www.genspark.ai/api/files/s/BzrQBgzk',
+    image_url: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
     price_per_night: 24500, rating: 5.0
   },
   {
     id: 4, name: 'The Alpine Chalet', category: 'Mountain',
     tagline: 'Snow, silence & stone',
     description: 'A stone-and-timber chalet designed for winter. Thick walls, a wood fire, wool blankets and snowfall from your window — the Himalayan winter as it should be experienced.',
-    image_url: 'https://www.genspark.ai/api/files/s/3WTkihgw',
+    image_url: 'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&q=80',
     price_per_night: 21000, rating: 4.8
   },
   {
     id: 5, name: 'The Valley Retreat', category: 'Mountain',
     tagline: 'Where rivers begin',
     description: 'Positioned above a glacial valley with views of ancient pine forests cascading down to silver streams. A contemplative space for writers, thinkers and dreamers.',
-    image_url: 'https://www.genspark.ai/api/files/s/k6ltd7CC',
+    image_url: 'https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800&q=80',
     price_per_night: 16500, rating: 4.9
   },
   {
     id: 6, name: 'The Orchard Cottage', category: 'Forest',
     tagline: 'Among apple blossoms',
     description: 'Set within Nitara\'s working apple and plum orchard. A cottage stay with farm-to-table breakfasts, orchard walks and the sweet perfume of Kumaoni summer.',
-    image_url: 'https://www.genspark.ai/api/files/s/aIdMy56z',
+    image_url: 'https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=800&q=80',
     price_per_night: 12500, rating: 4.7
   }
 ];
@@ -55,7 +55,7 @@ function renderStars(rating) {
 
 function buildDestCard(dest) {
   return `
-    <article class="dest-card" 
+    <article class="dest-card"
              onclick="window.location.href='destination-detail.html?id=${dest.id}'"
              tabindex="0"
              role="article"
@@ -142,13 +142,11 @@ loadDestinations();
   prevBtn && prevBtn.addEventListener('click', () => { stopAuto(); goTo(current - 1); startAuto(); });
   nextBtn && nextBtn.addEventListener('click', () => { stopAuto(); goTo(current + 1); startAuto(); });
 
-  // Keyboard
   track.addEventListener('keydown', e => {
     if (e.key === 'ArrowLeft') { stopAuto(); goTo(current - 1); startAuto(); }
     if (e.key === 'ArrowRight') { stopAuto(); goTo(current + 1); startAuto(); }
   });
 
-  // Touch
   let touchStartX = 0;
   track.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].clientX; }, { passive: true });
   track.addEventListener('touchend', e => {
