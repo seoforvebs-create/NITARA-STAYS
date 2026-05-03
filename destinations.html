@@ -6,7 +6,7 @@
   <title>Destinations — Nitara Stays | Mountain Retreats in Mukteshwar</title>
   <meta name="description" content="Explore Nitara Stays' curated mountain retreats in Mukteshwar, Uttarakhand — from panoramic summit suites to forest chalets and valley cottages." />
   <meta property="og:title" content="Destinations — Nitara Stays" />
-  <meta property="og:image" content="https://www.genspark.ai/api/files/s/3WTkihgw" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1200&q=80" />
   <link rel="stylesheet" href="css/global.css" />
   <link rel="stylesheet" href="css/destinations.css" />
 </head>
@@ -18,7 +18,7 @@
   <a href="index.html" class="nav-logo">NITARA <span>STAYS</span></a>
   <ul class="nav-links" role="list">
     <li><a href="index.html">Home</a></li>
-    <li><a href="destinations.html">Destinations</a></li>
+    <li><a href="destinations.html" class="active">Destinations</a></li>
     <li><a href="experiences.html">Experiences</a></li>
     <li><a href="gallery.html">Gallery</a></li>
     <li><a href="about.html">About</a></li>
@@ -28,14 +28,19 @@
   <button id="nav-hamburger" class="nav-hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
 </nav>
 <div id="nav-mobile-panel" class="nav-mobile-panel">
-  <a href="index.html">Home</a><a href="destinations.html">Destinations</a><a href="experiences.html">Experiences</a><a href="gallery.html">Gallery</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+  <a href="index.html">Home</a>
+  <a href="destinations.html">Destinations</a>
+  <a href="experiences.html">Experiences</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
   <a href="booking.html" class="mobile-cta">Book Now</a>
 </div>
 <div id="nav-overlay" class="nav-overlay"></div>
 
 <!-- Page Hero -->
 <section class="page-hero destinations-page" aria-label="Destinations hero">
-  <div class="page-hero-bg" style="background-image:url('https://www.genspark.ai/api/files/s/3WTkihgw')" id="hero-parallax"></div>
+  <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=85')" id="hero-parallax"></div>
   <div class="page-hero-overlay"></div>
   <div class="page-hero-content">
     <p class="page-hero-label">Our Collection</p>
@@ -46,7 +51,7 @@
 
 <!-- Featured Destination Banner -->
 <div class="dest-featured-banner reveal">
-  <img src="https://www.genspark.ai/api/files/s/BzrQBgzk" alt="Featured — The Summit Suite with panoramic Himalayan views" loading="lazy" />
+  <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?w=1600&q=80" alt="Featured — The Summit Suite with panoramic Himalayan views" loading="lazy" />
   <div class="dest-featured-overlay">
     <div class="dest-featured-content">
       <p class="dest-featured-tag">✦ Featured Retreat</p>
@@ -72,7 +77,7 @@
 <section class="destinations-grid-section" aria-label="Destinations grid">
   <p class="destinations-count" id="dest-count">Loading retreats…</p>
   <div class="destinations-grid" id="destinations-grid" role="list">
-    <!-- Cards injected by JS -->
+    <!-- Cards injected by destinations.js -->
   </div>
   <div class="dest-empty" id="dest-empty" role="status" aria-live="polite">
     <div class="dest-empty-icon">🏔</div>
@@ -87,20 +92,71 @@
       <p class="footer-logo">NITARA <span>STAYS</span></p>
       <p class="footer-tagline">Where the Himalayas Begin</p>
       <p class="footer-desc">A curated mountain sanctuary in Mukteshwar, Dhanachuli — at 2,286 metres, where Himalayan peaks frame every horizon.</p>
-      <div class="footer-socials"><a href="#" aria-label="Instagram">&#9651;</a><a href="#" aria-label="Facebook">&#9633;</a><a href="#" aria-label="YouTube">&#9711;</a></div>
+      <div class="footer-socials" aria-label="Social media links">
+        <a href="#" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="#" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </a>
+        <a href="#" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 001.46 6.42 29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+        </a>
+      </div>
     </div>
-    <div class="footer-col"><p class="footer-col-title">Navigate</p><ul><li><a href="index.html">Home</a></li><li><a href="destinations.html">Destinations</a></li><li><a href="experiences.html">Experiences</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-    <div class="footer-col"><p class="footer-col-title">Explore</p><ul><li><a href="#">Mukteshwar Temple</a></li><li><a href="#">Jageshwar Dham</a></li><li><a href="#">Kasar Devi</a></li><li><a href="#">Bhalugaad Falls</a></li><li><a href="#">Kainchi Dham</a></li></ul></div>
-    <div class="footer-col"><p class="footer-col-title">Contact</p>
-      <div class="footer-contact-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M12 2C8.686 2 6 4.686 6 8c0 5.25 6 13 6 13s6-7.75 6-13c0-3.314-2.686-6-6-6z"/><circle cx="12" cy="8" r="2"/></svg><span>Dhanachuli, Mukteshwar, Uttarakhand 263136</span></div>
-      <div class="footer-contact-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg><span>+91 98765 43210</span></div>
+    <div class="footer-col">
+      <p class="footer-col-title">Navigate</p>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="experiences.html">Experiences</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <p class="footer-col-title">Explore</p>
+      <ul>
+        <li><a href="#">Mukteshwar Temple</a></li>
+        <li><a href="#">Jageshwar Dham</a></li>
+        <li><a href="#">Kasar Devi</a></li>
+        <li><a href="#">Bhalugaad Falls</a></li>
+        <li><a href="#">Kainchi Dham</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <p class="footer-col-title">Contact</p>
+      <div class="footer-contact-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M12 2C8.686 2 6 4.686 6 8c0 5.25 6 13 6 13s6-7.75 6-13c0-3.314-2.686-6-6-6z"/><circle cx="12" cy="8" r="2"/></svg>
+        <span>Dhanachuli, Mukteshwar, Uttarakhand 263136</span>
+      </div>
+      <div class="footer-contact-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        <span>+91 98765 43210</span>
+      </div>
+      <div class="footer-contact-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span>hello@nitarastays.com</span>
+      </div>
     </div>
   </div>
-  <div class="footer-bottom"><span>© 2025 Nitara Stays. All rights reserved.</span><div style="display:flex;gap:24px;"><a href="#">Privacy</a><a href="#">Terms</a><a href="admin.html">Admin</a></div></div>
+  <div class="footer-bottom">
+    <span>© 2026 Nitara Stays. All rights reserved.</span>
+    <div style="display:flex;gap:24px;">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="admin.html">Admin</a>
+    </div>
+  </div>
 </footer>
 
-<button id="scroll-top" aria-label="Scroll to top"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><polyline points="18 15 12 9 6 15"/></svg></button>
-<a href="https://wa.me/919876543210" id="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.996 0C5.372 0 0 5.373 0 12c0 2.127.558 4.122 1.529 5.857L.057 23.879a.5.5 0 00.611.637l6.228-1.63A11.947 11.947 0 0011.996 24C18.62 24 24 18.627 24 12S18.62 0 11.996 0zm0 21.818a9.822 9.822 0 01-5.145-1.453l-.368-.22-3.812 1 1.017-3.718-.241-.382A9.802 9.802 0 012.18 12c0-5.418 4.399-9.818 9.816-9.818 5.418 0 9.817 4.4 9.817 9.818s-4.399 9.818-9.817 9.818z"/></svg></a>
+<button id="scroll-top" aria-label="Scroll to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+<a href="https://wa.me/919876543210" id="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.996 0C5.372 0 0 5.373 0 12c0 2.127.558 4.122 1.529 5.857L.057 23.879a.5.5 0 00.611.637l6.228-1.63A11.947 11.947 0 0011.996 24C18.62 24 24 18.627 24 12S18.62 0 11.996 0zm0 21.818a9.822 9.822 0 01-5.145-1.453l-.368-.22-3.812 1 1.017-3.718-.241-.382A9.802 9.802 0 012.18 12c0-5.418 4.399-9.818 9.816-9.818 5.418 0 9.817 4.4 9.817 9.818s-4.399 9.818-9.817 9.818z"/></svg>
+</a>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script src="js/supabase-config.js"></script>
