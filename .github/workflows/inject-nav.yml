@@ -2,11 +2,16 @@ name: Inject Nav Upgrade Script
 on:
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   inject:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Inject nav-upgrade.js into all HTML files
         run: |
@@ -19,10 +24,10 @@ jobs:
             fi
           done
 
-      - name: Commit changes
+      - name: Commit and push changes
         run: |
-          git config user.name "github-actions"
-          git config user.email "actions@github.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
           git add *.html
           git diff --staged --quiet || git commit -m "Auto: inject nav-upgrade.js into all pages"
-          git push
+          git push origin HEAD
