@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin — Nitara Stays</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/admin.css" />
+</head>
+<body class="admin-body">
+
+<div id="page-loader"><div class="loader-inner"><div class="loader-logo">NITARA</div><div class="loader-bar"></div></div></div>
+
+<!-- ─── PASSWORD GATE ─── -->
+<div id="admin-gate" class="admin-gate" role="main" aria-label="Admin login">
+  <div class="admin-gate-box">
+    <p class="admin-gate-logo">NITARA <span>ADMIN</span></p>
+    <p class="admin-gate-sub">Secure Dashboard Access</p>
+    <div class="section-divider" style="margin:20px auto;width:48px;"></div>
+    <form id="admin-login-form" novalidate aria-label="Admin login form">
+      <div class="form-group" style="margin-bottom:20px;">
+        <label for="admin-password-input" style="font-size:0.72rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.5);display:block;margin-bottom:8px;">Password</label>
+        <input type="password" id="admin-password-input" class="admin-password-input" placeholder="Enter admin password" autocomplete="current-password" required aria-required="true" />
+      </div>
+      <button type="submit" class="btn-gold" style="width:100%;padding:14px;" id="admin-login-btn">Access Dashboard</button>
+      <p class="admin-gate-error" id="admin-gate-error" role="alert" aria-live="assertive" hidden>Incorrect password. Please try again.</p>
+    </form>
+    <p class="admin-gate-hint">Default: nitara2024</p>
+  </div>
+</div>
+
+<!-- ─── DASHBOARD ─── -->
+<div id="admin-dashboard" class="admin-dashboard" hidden>
+
+  <!-- Top Bar -->
+  <header class="admin-topbar" role="banner">
+    <div class="admin-topbar-left">
+      <p class="admin-brand">NITARA <span>ADMIN</span></p>
+      <p class="admin-breadcrumb">Dashboard Overview</p>
+    </div>
+    <div class="admin-topbar-right">
+      <span class="admin-date" id="admin-date-display" aria-label="Current date"></span>
+      <button class="admin-logout-btn" id="admin-logout" aria-label="Logout from admin">Logout</button>
+    </div>
+  </header>
+
+  <!-- Sidebar + Content -->
+  <div class="admin-layout">
+    <aside class="admin-sidebar" role="navigation" aria-label="Admin sidebar navigation">
+      <nav class="admin-nav">
+        <button class="admin-nav-item active" data-section="overview" aria-pressed="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          Overview
+        </button>
+        <button class="admin-nav-item" data-section="bookings" aria-pressed="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Bookings
+        </button>
+        <button class="admin-nav-item" data-section="messages" aria-pressed="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          Messages
+        </button>
+        <button class="admin-nav-item" data-section="newsletter" aria-pressed="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Newsletter
+        </button>
+      </nav>
+      <a href="index.html" class="admin-back-link">← Back to Website</a>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="admin-main" role="main">
+
+      <!-- ── OVERVIEW SECTION ── -->
+      <section id="section-overview" class="admin-section active" aria-label="Overview dashboard">
+        <div class="admin-section-header">
+          <h1 class="admin-section-title">Dashboard Overview</h1>
+          <button class="admin-refresh-btn" id="refresh-btn" aria-label="Refresh data">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 11-2.12-9.36L23 10"/></svg>
+            Refresh
+          </button>
+        </div>
+
+        <!-- KPI Cards -->
+        <div class="kpi-grid" role="list" aria-label="Key performance indicators">
+          <div class="kpi-card" role="listitem">
+            <div class="kpi-icon kpi-icon--blue" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            </div>
+            <div class="kpi-data">
+              <p class="kpi-label">Total Bookings</p>
+              <p class="kpi-value" id="kpi-bookings">—</p>
+              <p class="kpi-trend kpi-trend--up" id="kpi-bookings-trend">Loading…</p>
+            </div>
+          </div>
+          <div class="kpi-card" role="listitem">
+            <div class="kpi-icon kpi-icon--gold" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+            </div>
+            <div class="kpi-data">
+              <p class="kpi-label">Total Revenue</p>
+              <p class="kpi-value" id="kpi-revenue">—</p>
+              <p class="kpi-trend kpi-trend--up" id="kpi-revenue-trend">Loading…</p>
+            </div>
+          </div>
+          <div class="kpi-card" role="listitem">
+            <div class="kpi-icon kpi-icon--green" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M12 2C8.686 2 6 4.686 6 8c0 5.25 6 13 6 13s6-7.75 6-13c0-3.314-2.686-6-6-6z"/><circle cx="12" cy="8" r="2"/></svg>
+            </div>
+            <div class="kpi-data">
+              <p class="kpi-label">Active Destinations</p>
+              <p class="kpi-value" id="kpi-destinations">9</p>
+              <p class="kpi-trend">Curated retreats</p>
+            </div>
+          </div>
+          <div class="kpi-card" role="listitem">
+            <div class="kpi-icon kpi-icon--orange" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            </div>
+            <div class="kpi-data">
+              <p class="kpi-label">Pending Enquiries</p>
+              <p class="kpi-value" id="kpi-enquiries">—</p>
+              <p class="kpi-trend kpi-trend--warn" id="kpi-enquiries-trend">Loading…</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Bookings Quick View -->
+        <div class="admin-card" aria-label="Recent bookings">
+          <div class="admin-card-header">
+            <h2 class="admin-card-title">Recent Bookings</h2>
+            <button class="admin-nav-item-inline" data-section="bookings">View All →</button>
+          </div>
+          <div class="admin-table-wrap" role="region" aria-label="Recent bookings table">
+            <table class="admin-table" id="overview-bookings-table" aria-label="Recent bookings">
+              <thead>
+                <tr>
+                  <th scope="col">Ref</th>
+                  <th scope="col">Guest</th>
+                  <th scope="col">Retreat</th>
+                  <th scope="col">Check-in</th>
+                  <th scope="col">Amount</th>
+                  <th scope="col">Status</th>
+                </tr>
+              </thead>
+              <tbody id="overview-bookings-body">
+                <tr><td colspan="6" class="admin-table-loading" aria-live="polite">Loading bookings…</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── BOOKINGS SECTION ── -->
+      <section id="section-bookings" class="admin-section" hidden aria-label="Manage bookings">
+        <div class="admin-section-header">
+          <h1 class="admin-section-title">All Bookings</h1>
+          <button class="btn-outline-dark admin-export-btn" id="export-bookings-btn" aria-label="Export bookings to CSV">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Export CSV
+          </button>
+        </div>
+
+        <div class="admin-filter-row">
+          <select id="booking-status-filter" class="admin-select" aria-label="Filter by status">
+            <option value="">All Statuses</option>
+            <option value="confirmed">Confirmed</option>
+            <option value="pending">Pending</option>
+            <option value="cancelled">Cancelled</option>
+            <option value="completed">Completed</option>
+          </select>
+          <input type="text" id="booking-search" class="admin-search" placeholder="Search by name or reference…" aria-label="Search bookings" />
+        </div>
+
+        <div class="admin-card">
+          <div class="admin-table-wrap" role="region" aria-label="All bookings table">
+            <table class="admin-table" id="all-bookings-table" aria-label="All bookings">
+              <thead>
+                <tr>
+                  <th scope="col">Ref</th>
+                  <th scope="col">Guest</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Retreat</th>
+                  <th scope="col">Check-in</th>
+                  <th scope="col">Check-out</th>
+                  <th scope="col">Guests</th>
+                  <th scope="col">Amount</th>
+                  <th scope="col">Status</th>
+                </tr>
+              </thead>
+              <tbody id="all-bookings-body">
+                <tr><td colspan="9" class="admin-table-loading" aria-live="polite">Loading bookings…</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="admin-table-meta" id="bookings-meta" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <!-- ── MESSAGES SECTION ── -->
+      <section id="section-messages" class="admin-section" hidden aria-label="Contact messages">
+        <div class="admin-section-header">
+          <h1 class="admin-section-title">Contact Messages</h1>
+          <button class="btn-outline-dark admin-export-btn" id="export-messages-btn" aria-label="Export messages to CSV">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Export CSV
+          </button>
+        </div>
+        <div class="messages-list" id="messages-list" role="list" aria-label="Contact messages list">
+          <div class="admin-table-loading" aria-live="polite">Loading messages…</div>
+        </div>
+      </section>
+
+      <!-- ── NEWSLETTER SECTION ── -->
+      <section id="section-newsletter" class="admin-section" hidden aria-label="Newsletter subscribers">
+        <div class="admin-section-header">
+          <h1 class="admin-section-title">Newsletter Subscribers</h1>
+          <button class="btn-outline-dark admin-export-btn" id="export-newsletter-btn" aria-label="Export subscribers to CSV">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Export CSV
+          </button>
+        </div>
+        <div class="admin-card">
+          <div class="admin-table-wrap">
+            <table class="admin-table" id="newsletter-table" aria-label="Newsletter subscribers">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Subscribed At</th>
+                </tr>
+              </thead>
+              <tbody id="newsletter-body">
+                <tr><td colspan="3" class="admin-table-loading" aria-live="polite">Loading subscribers…</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="admin-table-meta" id="newsletter-meta" aria-live="polite"></p>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="js/supabase-config.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>
