@@ -11,6 +11,60 @@
   <meta property="og:type" content="website" />
   <link rel="stylesheet" href="css/global.css" />
   <link rel="stylesheet" href="css/home.css" />
+  <style>
+    /* ─── Hero Video ─── */
+    .hero {
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-video-wrap {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+      background: #000;
+    }
+    .hero-video-iframe {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 177.78vh;
+      height: 56.25vw;
+      min-width: 100%;
+      min-height: 100%;
+      transform: translate(-50%, -50%);
+      border: none;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 1.2s ease;
+    }
+    .hero-video-iframe.loaded { opacity: 1; }
+    .hero-image-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+      z-index: 1;
+      transition: opacity 1.2s ease;
+    }
+    .hero-image-bg.hidden { opacity: 0; }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(10,10,10,0.35) 0%,
+        rgba(10,10,10,0.20) 50%,
+        rgba(10,10,10,0.65) 100%
+      );
+      z-index: 2;
+    }
+    .hero-content,
+    .hero-scroll-hint,
+    .hero-location { position: relative; z-index: 3; }
+  </style>
 </head>
 <body>
 
@@ -53,8 +107,25 @@
 
 <!-- ─── HERO ─── -->
 <section class="hero" aria-label="Hero banner">
-  <div class="hero-image-bg"></div>
+
+  <!-- Fallback image shown until video loads -->
+  <div class="hero-image-bg" id="hero-image-bg"></div>
+
+  <!-- YouTube Video Background -->
+  <div class="hero-video-wrap">
+    <iframe
+      id="hero-video-iframe"
+      class="hero-video-iframe"
+      src="https://www.youtube.com/embed/CUIdMusnugs?autoplay=1&mute=1&loop=1&playlist=CUIdMusnugs&controls=0&showinfo=0&rel=0&playsinline=1&modestbranding=1&disablekb=1&iv_load_policy=3&enablejsapi=1"
+      frameborder="0"
+      allow="autoplay; fullscreen"
+      allowfullscreen
+      title="Himalayan mountain background video">
+    </iframe>
+  </div>
+
   <div class="hero-overlay"></div>
+
   <div class="hero-content">
     <p class="hero-eyebrow">Mukteshwar · Uttarakhand · 2,286m</p>
     <h1 class="hero-title">Where the Peaks<br><em>Meet Stillness</em></h1>
@@ -64,14 +135,17 @@
       <a href="booking.html" class="btn-gold">Reserve Your Stay</a>
     </div>
   </div>
+
   <div class="hero-scroll-hint" aria-hidden="true">
     <div class="scroll-mouse"></div>
     <span>Scroll</span>
   </div>
+
   <div class="hero-location" aria-label="Location">
     <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true"><path d="M12 2C8.686 2 6 4.686 6 8c0 5.25 6 13 6 13s6-7.75 6-13c0-3.314-2.686-6-6-6z"/><circle cx="12" cy="8" r="2"/></svg>
     Dhanachuli, Mukteshwar, Uttarakhand
   </div>
+
 </section>
 
 <!-- ─── DESTINATIONS STRIP ─── -->
@@ -170,12 +244,9 @@
   </div>
   <div class="testimonials-carousel" aria-live="polite">
     <div class="testimonials-track" id="testimonials-track">
-
       <div class="testimonial-slide" aria-label="Testimonial 1 of 4">
         <div class="testimonial-quote-block">
-          <div class="testimonial-stars" aria-label="5 stars">
-            <span aria-hidden="true">★★★★★</span>
-          </div>
+          <div class="testimonial-stars" aria-label="5 stars"><span aria-hidden="true">★★★★★</span></div>
           <blockquote class="testimonial-text">"We woke at 5am to see Nanda Devi turn gold in the dawn light. No words. Nitara gave us that — a silence so full it felt like music. The most nourishing four days of our lives."</blockquote>
           <div class="testimonial-author">
             <div class="testimonial-avatar" aria-hidden="true">A</div>
@@ -189,7 +260,6 @@
           <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&q=80" alt="Luxury mountain villa at Nitara Stays" loading="lazy" />
         </div>
       </div>
-
       <div class="testimonial-slide" aria-label="Testimonial 2 of 4">
         <div class="testimonial-quote-block">
           <div class="testimonial-stars" aria-label="5 stars"><span aria-hidden="true">★★★★★</span></div>
@@ -206,7 +276,6 @@
           <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=800&q=80" alt="Alpine forest trek with snow and mountains" loading="lazy" />
         </div>
       </div>
-
       <div class="testimonial-slide" aria-label="Testimonial 3 of 4">
         <div class="testimonial-quote-block">
           <div class="testimonial-stars" aria-label="5 stars"><span aria-hidden="true">★★★★★</span></div>
@@ -223,7 +292,6 @@
           <img src="https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?w=800&q=80" alt="Mountain valley river Himalayan landscape" loading="lazy" />
         </div>
       </div>
-
       <div class="testimonial-slide" aria-label="Testimonial 4 of 4">
         <div class="testimonial-quote-block">
           <div class="testimonial-stars" aria-label="5 stars"><span aria-hidden="true">★★★★★</span></div>
@@ -240,7 +308,6 @@
           <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800&q=80" alt="Himalayan valley village landscape at dusk" loading="lazy" />
         </div>
       </div>
-
     </div>
   </div>
   <div class="testimonial-controls" aria-label="Testimonial navigation">
@@ -405,5 +472,21 @@
 <script src="js/global.js"></script>
 <script src="js/nav-upgrade.js"></script>
 <script src="js/home.js"></script>
+
+<!-- Hero Video Fade Script -->
+<script>
+  (function () {
+    const iframe  = document.getElementById('hero-video-iframe');
+    const imageBg = document.getElementById('hero-image-bg');
+    if (!iframe || !imageBg) return;
+
+    // Fade in video and fade out image after 2s (video has started by then)
+    setTimeout(function () {
+      iframe.classList.add('loaded');
+      imageBg.classList.add('hidden');
+    }, 2000);
+  })();
+</script>
+
 </body>
 </html>
