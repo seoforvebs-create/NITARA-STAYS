@@ -2,8 +2,8 @@
    NITARA STAYS — Supabase Configuration
    ============================================================ */
 
-const SUPABASE_URL    = 'YOUR_SUPABASE_PROJECT_URL';
-const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';
+const SUPABASE_URL    = 'https://qteawpqvqtfqkzinhixv.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF0ZWF3cHF2cXRmcWt6aW5oaXh2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc3OTQ5MzEsImV4cCI6MjA5MzM3MDkzMX0.fHNwdmR7EuZxCS2ybeef84iwpTR3P6_N5ZAKTDwKaKY';
 
 /* Initialise Supabase only when real credentials are supplied.
    Pages that reference window.supabase will safely skip DB calls
