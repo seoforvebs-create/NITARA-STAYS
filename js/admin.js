@@ -23,12 +23,13 @@ async function handleLogin() {
 
   const { data, error } = await supabase
     .from('admin_settings')
-    .select('password')
+    .select('value')
+    .eq('key', 'admin_password')
     .single();
 
   if (error || !data) { errEl.textContent = 'Could not verify. Try again.'; return; }
 
-  if (input === data.password) {
+  if (input === data.value) {
     sessionStorage.setItem(ADMIN_PASSWORD_KEY, 'true');
     document.getElementById('auth-overlay').style.display = 'none';
     document.getElementById('dashboard').style.display = 'block';
@@ -207,9 +208,9 @@ function populateDestinationFilter(bookings) {
 function applyFilters() {
   const search = document.getElementById('filter-search').value.toLowerCase();
   const status = document.getElementById('filter-status').value;
-  const dest = document.getElementById('filter-destination').value;
-  const from = document.getElementById('filter-date-from').value;
-  const to = document.getElementById('filter-date-to').value;
+  const dest   = document.getElementById('filter-destination').value;
+  const from   = document.getElementById('filter-date-from').value;
+  const to     = document.getElementById('filter-date-to').value;
 
   let filtered = allBookings.filter(b => {
     const matchSearch = !search ||
@@ -217,9 +218,9 @@ function applyFilters() {
       (b.guest_email || '').toLowerCase().includes(search) ||
       (b.booking_ref || '').toLowerCase().includes(search);
     const matchStatus = !status || b.status === status;
-    const matchDest = !dest || String(b.destination_id) === dest;
-    const matchFrom = !from || b.checkin_date >= from;
-    const matchTo = !to || b.checkin_date <= to;
+    const matchDest   = !dest   || String(b.destination_id) === dest;
+    const matchFrom   = !from   || b.checkin_date >= from;
+    const matchTo     = !to     || b.checkin_date <= to;
     return matchSearch && matchStatus && matchDest && matchFrom && matchTo;
   });
 
