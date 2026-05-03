@@ -1,0 +1,331 @@
+/* ============================================================
+   NITARA STAYS — About CSS
+   ============================================================ */
+
+.about-page { padding-top: var(--nav-h); }
+
+/* ─── Split Intro ─── */
+.about-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 90vh;
+}
+.about-split-img {
+  position: relative;
+  overflow: hidden;
+}
+.about-split-img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 8s ease;
+}
+.about-split-img:hover img { transform: scale(1.04); }
+.about-split-content {
+  background: var(--charcoal);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 72px;
+}
+.about-split-content .section-title { color: var(--white); }
+.about-split-content .section-subtitle { color: rgba(255,255,255,0.55); max-width: 100%; }
+.about-brand-quote {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.7;
+  margin: 28px 0;
+  padding-left: 24px;
+  border-left: 2px solid var(--gold);
+}
+.about-story-text {
+  font-size: 0.92rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.95;
+  margin-bottom: 18px;
+}
+
+/* ─── Stats ─── */
+.stats-section {
+  padding: 100px 48px;
+  background: var(--ivory);
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--stone);
+  margin-top: 56px;
+}
+.stat-card {
+  background: var(--white);
+  padding: 52px 36px;
+  text-align: center;
+  transition: background 0.3s;
+}
+.stat-card:hover { background: var(--ivory); }
+.stat-number {
+  font-family: var(--font-serif);
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  font-weight: 300;
+  color: var(--charcoal);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.stat-number em { font-style: normal; color: var(--gold); }
+.stat-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--taupe);
+}
+.stat-desc {
+  font-size: 0.85rem;
+  color: var(--taupe);
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+/* ─── Philosophy ─── */
+.about-values-section {
+  padding: 100px 48px;
+  background: var(--charcoal);
+}
+.about-values-section .section-title { color: var(--white); }
+.about-values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: rgba(255,255,255,0.05);
+  margin-top: 56px;
+}
+.about-value-card {
+  background: var(--charcoal);
+  padding: 48px 40px;
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: border-color 0.3s, background 0.3s;
+}
+.about-value-card:hover {
+  border-color: rgba(200,169,110,0.3);
+  background: rgba(200,169,110,0.04);
+}
+.about-value-num {
+  font-family: var(--font-serif);
+  font-size: 3.5rem;
+  font-weight: 300;
+  color: rgba(200,169,110,0.2);
+  line-height: 1;
+  margin-bottom: 16px;
+}
+.about-value-title {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--white);
+  margin-bottom: 14px;
+}
+.about-value-desc {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.85;
+}
+
+/* ─── Team ─── */
+.team-section {
+  padding: 100px 48px;
+  background: var(--white);
+}
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  margin-top: 56px;
+}
+.team-card {
+  text-align: center;
+  cursor: pointer;
+}
+.team-card-img {
+  height: 320px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 20px;
+}
+.team-card-img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.5s ease;
+}
+.team-card:hover .team-card-img img { transform: scale(1.05); }
+.team-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(26,26,26,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.team-card:hover .team-card-overlay { opacity: 1; }
+.team-linkedin {
+  width: 40px; height: 40px;
+  border: 1px solid rgba(255,255,255,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 1rem;
+  transition: border-color 0.2s, background 0.2s;
+}
+.team-linkedin:hover { border-color: var(--gold); background: rgba(200,169,110,0.2); }
+.team-name {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 4px;
+}
+.team-designation {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* ─── Timeline ─── */
+.timeline-section {
+  padding: 100px 48px;
+  background: var(--ivory);
+}
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 56px auto 0;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0; bottom: 0;
+  width: 1px;
+  background: var(--stone);
+  transform: translateX(-50%);
+}
+.timeline-item {
+  display: grid;
+  grid-template-columns: 1fr 60px 1fr;
+  align-items: center;
+  margin-bottom: 60px;
+  gap: 0;
+}
+.timeline-item:nth-child(even) .timeline-left { order: 3; text-align: left; padding-left: 40px; padding-right: 0; }
+.timeline-item:nth-child(even) .timeline-right { order: 1; text-align: right; padding-right: 40px; padding-left: 0; }
+.timeline-left { text-align: right; padding-right: 40px; }
+.timeline-right { padding-left: 40px; }
+.timeline-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+.timeline-dot {
+  width: 16px; height: 16px;
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  background: var(--ivory);
+}
+.timeline-year {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+.timeline-event {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--charcoal);
+  margin-bottom: 6px;
+}
+.timeline-detail {
+  font-size: 0.85rem;
+  color: var(--taupe);
+  line-height: 1.7;
+}
+
+/* ─── Awards ─── */
+.awards-section {
+  padding: 80px 48px;
+  background: var(--charcoal);
+  text-align: center;
+}
+.awards-section .section-title { color: var(--white); }
+.awards-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1px;
+  background: rgba(255,255,255,0.05);
+  margin-top: 56px;
+  justify-content: center;
+}
+.award-item {
+  background: var(--charcoal);
+  padding: 36px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  flex: 0 0 180px;
+  transition: background 0.3s;
+}
+.award-item:hover { background: rgba(255,255,255,0.04); }
+.award-icon { font-size: 2.2rem; }
+.award-name {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  text-align: center;
+  line-height: 1.5;
+}
+.award-year {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--gold);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 1100px) {
+  .about-split { grid-template-columns: 1fr; }
+  .about-split-img { height: 50vh; }
+  .about-split-content { padding: 60px 40px; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .team-grid { grid-template-columns: repeat(2, 1fr); }
+  .about-values-grid { grid-template-columns: 1fr 1fr; }
+  .stats-section, .team-section, .timeline-section, .about-values-section, .awards-section { padding: 72px 32px; }
+}
+@media (max-width: 768px) {
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .team-grid { grid-template-columns: 1fr 1fr; }
+  .about-values-grid { grid-template-columns: 1fr; }
+  .timeline::before { left: 20px; }
+  .timeline-item { grid-template-columns: 40px 1fr; gap: 16px; }
+  .timeline-center { justify-content: flex-start; }
+  .timeline-left { display: none; }
+  .timeline-right { padding-left: 0; text-align: left; }
+  .timeline-item:nth-child(even) .timeline-left { display: none; }
+  .timeline-item:nth-child(even) .timeline-right { order: 2; text-align: left; padding-right: 0; padding-left: 0; }
+  .stats-section, .team-section, .timeline-section, .about-values-section, .awards-section { padding: 56px 20px; }
+  .about-split-content { padding: 48px 24px; }
+}
+@media (max-width: 480px) {
+  .team-grid { grid-template-columns: 1fr; }
+}

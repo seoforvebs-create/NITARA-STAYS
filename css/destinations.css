@@ -1,0 +1,245 @@
+/* ============================================================
+   NITARA STAYS — Destinations CSS
+   ============================================================ */
+
+.destinations-page { padding-top: var(--nav-h); }
+
+/* ─── Filter Bar ─── */
+.filter-section {
+  padding: 40px 48px 20px;
+  background: var(--white);
+  border-bottom: 1px solid var(--stone);
+}
+.filter-tabs {
+  display: flex;
+  gap: 0;
+  flex-wrap: wrap;
+}
+.filter-tab {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 12px 28px;
+  border: 1px solid var(--stone);
+  border-right: none;
+  background: transparent;
+  color: var(--taupe);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+.filter-tab:last-child { border-right: 1px solid var(--stone); }
+.filter-tab:hover { background: var(--ivory); color: var(--charcoal); }
+.filter-tab.active {
+  background: var(--charcoal);
+  color: var(--gold);
+  border-color: var(--charcoal);
+}
+
+/* ─── Destinations Grid ─── */
+.destinations-grid-section {
+  padding: 64px 48px 100px;
+  background: var(--ivory);
+}
+.destinations-count {
+  font-size: 0.82rem;
+  color: var(--taupe);
+  margin-bottom: 36px;
+  letter-spacing: 0.06em;
+}
+.destinations-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+.dest-full-card {
+  background: var(--white);
+  overflow: hidden;
+  cursor: pointer;
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
+  position: relative;
+}
+.dest-full-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+.dest-full-card.hidden { display: none; }
+.dest-full-card-img {
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+.dest-full-card-img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+.dest-full-card:hover .dest-full-card-img img { transform: scale(1.07); }
+.dest-full-card-cat {
+  position: absolute;
+  top: 20px; left: 20px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  background: var(--gold);
+  color: var(--charcoal);
+  padding: 4px 12px;
+  z-index: 2;
+}
+.dest-full-card-fav {
+  position: absolute;
+  top: 16px; right: 16px;
+  width: 36px; height: 36px;
+  background: rgba(255,255,255,0.9);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+  transition: background 0.2s;
+}
+.dest-full-card-fav:hover { background: var(--gold); }
+.dest-full-card-fav svg { width: 16px; height: 16px; stroke: var(--charcoal); }
+.dest-full-card-body {
+  padding: 28px 28px 24px;
+}
+.dest-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+.dest-rating-stars { color: var(--gold); font-size: 0.75rem; display: flex; gap: 2px; }
+.dest-rating-num { font-size: 0.8rem; color: var(--taupe); margin-left: 4px; }
+.dest-full-name {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--charcoal);
+  margin-bottom: 8px;
+  line-height: 1.25;
+}
+.dest-full-tagline {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--taupe);
+  margin-bottom: 14px;
+}
+.dest-full-desc {
+  font-size: 0.88rem;
+  color: var(--taupe);
+  line-height: 1.8;
+  margin-bottom: 24px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.dest-full-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--stone);
+  padding-top: 20px;
+}
+.dest-full-price {
+  font-family: var(--font-serif);
+}
+.dest-full-price-label { font-size: 0.72rem; color: var(--taupe); letter-spacing: 0.06em; }
+.dest-full-price-val {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--charcoal);
+}
+.dest-full-price-val span { font-size: 0.8rem; font-weight: 300; color: var(--taupe); }
+.dest-explore-btn {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+  background: var(--gold);
+  padding: 10px 22px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+.dest-explore-btn:hover {
+  background: var(--gold-light);
+  transform: translateY(-1px);
+}
+
+/* ─── Empty State ─── */
+.dest-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 80px 0;
+  display: none;
+}
+.dest-empty.visible { display: block; }
+.dest-empty-icon { font-size: 3rem; margin-bottom: 16px; }
+.dest-empty-text {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  color: var(--taupe);
+}
+
+/* ─── Featured Banner ─── */
+.dest-featured-banner {
+  position: relative;
+  height: 380px;
+  overflow: hidden;
+  margin-bottom: 0;
+}
+.dest-featured-banner img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+.dest-featured-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--overlay);
+  display: flex;
+  align-items: center;
+  padding: 0 80px;
+}
+.dest-featured-content { max-width: 600px; color: var(--white); }
+.dest-featured-tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+.dest-featured-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 300;
+  margin-bottom: 16px;
+}
+.dest-featured-sub {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 28px;
+  line-height: 1.7;
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 1100px) {
+  .destinations-grid { grid-template-columns: repeat(2, 1fr); }
+  .filter-section { padding: 32px 32px 16px; }
+  .destinations-grid-section { padding: 48px 32px 80px; }
+  .dest-featured-overlay { padding: 0 40px; }
+}
+@media (max-width: 768px) {
+  .destinations-grid { grid-template-columns: 1fr; }
+  .filter-section { padding: 24px 20px 12px; }
+  .destinations-grid-section { padding: 36px 20px 60px; }
+  .filter-tab { padding: 10px 16px; font-size: 0.68rem; }
+  .dest-featured-overlay { padding: 0 24px; }
+}
