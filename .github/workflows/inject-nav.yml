@@ -1,0 +1,28 @@
+name: Inject Nav Upgrade Script
+on:
+  workflow_dispatch:
+
+jobs:
+  inject:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Inject nav-upgrade.js into all HTML files
+        run: |
+          for file in *.html; do
+            if grep -q 'nav-upgrade.js' "$file"; then
+              echo "Already injected: $file"
+            else
+              sed -i 's|<script src="js/global.js"></script>|<script src="js/global.js"></script>\n<script src="js/nav-upgrade.js"></script>|g' "$file"
+              echo "Injected: $file"
+            fi
+          done
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add *.html
+          git diff --staged --quiet || git commit -m "Auto: inject nav-upgrade.js into all pages"
+          git push
