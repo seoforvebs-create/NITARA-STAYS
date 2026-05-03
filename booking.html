@@ -4,18 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Book Your Stay — Nitara Stays | Mukteshwar</title>
-  <meta name="description" content="Reserve your curated mountain retreat at Nitara Stays in Mukteshwar, Uttarakhand. Simple 3-step booking with instant confirmation." />
+  <meta name="description" content="Reserve your private mountain retreat at Nitara Stays, Mukteshwar. A curated sanctuary in the Kumaon Himalaya at 2,286 metres." />
   <meta property="og:title" content="Book Your Stay — Nitara Stays" />
-  <meta property="og:image" content="https://www.genspark.ai/api/files/s/9dBT4k1w" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80" />
   <link rel="stylesheet" href="css/global.css" />
   <link rel="stylesheet" href="css/booking.css" />
 </head>
 <body>
+
 <div id="page-loader"><div class="loader-inner"><div class="loader-logo">NITARA</div><div class="loader-bar"></div></div></div>
 
+<!-- Navbar -->
 <nav id="navbar" class="solid" aria-label="Main navigation">
   <a href="index.html" class="nav-logo">NITARA <span>STAYS</span></a>
-  <ul class="nav-links">
+  <ul class="nav-links" role="list">
     <li><a href="index.html">Home</a></li>
     <li><a href="destinations.html">Destinations</a></li>
     <li><a href="experiences.html">Experiences</a></li>
@@ -24,90 +26,107 @@
     <li><a href="contact.html">Contact</a></li>
   </ul>
   <a href="booking.html" class="nav-cta">Book Now</a>
-  <button id="nav-hamburger" class="nav-hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  <button id="nav-hamburger" class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
-<div id="nav-mobile-panel" class="nav-mobile-panel">
-  <a href="index.html">Home</a><a href="destinations.html">Destinations</a><a href="experiences.html">Experiences</a><a href="gallery.html">Gallery</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+<div id="nav-mobile-panel" class="nav-mobile-panel" aria-hidden="true">
+  <a href="index.html">Home</a>
+  <a href="destinations.html">Destinations</a>
+  <a href="experiences.html">Experiences</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
   <a href="booking.html" class="mobile-cta">Book Now</a>
 </div>
-<div id="nav-overlay" class="nav-overlay"></div>
+<div id="nav-overlay" class="nav-overlay" aria-hidden="true"></div>
 
-<main class="booking-page">
+<!-- Page Hero Banner -->
+<div class="booking-hero">
+  <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1600&q=80" alt="Nitara Stays mountain retreat" />
+  <div class="booking-hero-overlay">
+    <div class="booking-hero-content">
+      <p class="booking-hero-label">Reserve Your Sanctuary</p>
+      <h1 class="booking-hero-title">Book Your <em>Mountain Escape</em></h1>
+      <p class="booking-hero-sub">No payment now. Our concierge confirms within 4 hours.</p>
+    </div>
+  </div>
+</div>
 
-  <!-- Progress Bar -->
-  <div class="booking-progress" aria-label="Booking progress">
-    <div class="booking-progress-inner">
-      <div class="progress-step">
-        <div class="step-circle active" id="sc-1" aria-label="Step 1: Stay Details">1<span class="step-label">Stay Details</span></div>
-        <div class="step-line" id="sl-1"></div>
+<!-- Progress Bar -->
+<div class="booking-progress" role="navigation" aria-label="Booking steps">
+  <div class="booking-progress-inner">
+    <div class="progress-step">
+      <div class="step-circle active" id="step-circle-1" aria-current="step">
+        1
+        <span class="step-label">Stay Details</span>
       </div>
-      <div class="progress-step">
-        <div class="step-circle" id="sc-2" aria-label="Step 2: Your Details">2<span class="step-label">Your Details</span></div>
-        <div class="step-line" id="sl-2"></div>
+      <div class="step-line" id="step-line-1"></div>
+    </div>
+    <div class="progress-step">
+      <div class="step-circle" id="step-circle-2">
+        2
+        <span class="step-label">Your Details</span>
       </div>
-      <div class="progress-step">
-        <div class="step-circle" id="sc-3" aria-label="Step 3: Confirm">3<span class="step-label">Confirm</span></div>
+      <div class="step-line" id="step-line-2"></div>
+    </div>
+    <div class="progress-step">
+      <div class="step-circle" id="step-circle-3">
+        3
+        <span class="step-label">Confirm</span>
       </div>
     </div>
   </div>
+</div>
 
-  <!-- Layout -->
+<!-- Main Booking Layout -->
+<div class="booking-page">
   <div class="booking-layout">
 
-    <!-- Form Area -->
+    <!-- ── Form Area ── -->
     <div class="booking-form-area">
 
-      <!-- STEP 1 -->
-      <div class="booking-step active" id="step-1">
-        <h1 class="step-heading">Plan Your Stay</h1>
+      <!-- STEP 1 — Stay Details -->
+      <div class="booking-step active" id="step-1" role="region" aria-labelledby="step1-heading">
+        <h2 class="step-heading" id="step1-heading">Plan Your Stay</h2>
         <p class="step-sub">Choose your retreat, dates and preferences.</p>
 
-        <div class="form-row">
+        <div class="form-row single">
           <div class="form-group">
-            <label for="f-destination">Select Retreat</label>
-            <select class="form-control" id="f-destination" required aria-required="true">
-              <option value="">Choose a retreat…</option>
-              <option value="1">The Dhanachuli House — ₹18,500/night</option>
-              <option value="2">The Forest Terrace — ₹14,500/night</option>
-              <option value="3">The Summit Suite — ₹24,500/night</option>
-              <option value="4">The Alpine Chalet — ₹21,000/night</option>
-              <option value="5">The Valley Retreat — ₹16,500/night</option>
-              <option value="6">The Orchard Cottage — ₹12,500/night</option>
-              <option value="7">The Heritage Haveli — ₹13,500/night</option>
-              <option value="8">The Starlight Deck — ₹28,000/night</option>
-              <option value="9">The Mist Bungalow — ₹15,500/night</option>
+            <label class="form-label" for="retreat-select">Select Retreat <span class="req">*</span></label>
+            <select class="form-input" id="retreat-select" required aria-required="true">
+              <option value="">— Choose your sanctuary —</option>
+              <option value="1" data-price="18500" data-img="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&q=80">The Dhanachuli House — ₹18,500/night</option>
+              <option value="2" data-price="14500" data-img="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80">The Forest Terrace — ₹14,500/night</option>
+              <option value="3" data-price="24500" data-img="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80">The Summit Suite — ₹24,500/night</option>
+              <option value="4" data-price="21000" data-img="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&q=80">The Alpine Chalet — ₹21,000/night</option>
+              <option value="5" data-price="16500" data-img="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800&q=80">The Valley Retreat — ₹16,500/night</option>
+              <option value="6" data-price="12500" data-img="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=800&q=80">The Orchard Cottage — ₹12,500/night</option>
+              <option value="7" data-price="28000" data-img="https://images.unsplash.com/photo-1540541338287-41700207dee6?w=800&q=80">The Ridgeline Studio — ₹28,000/night</option>
+              <option value="8" data-price="11000" data-img="https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?w=800&q=80">The Kumaoni Farmhouse — ₹11,000/night</option>
+              <option value="9" data-price="32000" data-img="https://images.unsplash.com/photo-1623625434462-e5e42318ae49?w=800&q=80">The Cloud Villa — ₹32,000/night</option>
             </select>
-            <span class="form-error" id="err-destination">Please select a retreat.</span>
-          </div>
-          <div class="form-group">
-            <label for="f-room">Room Type</label>
-            <select class="form-control" id="f-room">
-              <option value="">Select room (optional)…</option>
-              <option value="suite">King Suite</option>
-              <option value="deluxe">Deluxe Room</option>
-              <option value="twin">Twin Room</option>
-              <option value="cottage">Cottage</option>
-            </select>
+            <p class="form-error" id="err-retreat" role="alert">Please select a retreat.</p>
           </div>
         </div>
 
         <div class="form-row">
           <div class="form-group">
-            <label for="f-checkin">Check-In Date</label>
-            <input type="date" class="form-control" id="f-checkin" required aria-required="true" />
-            <span class="form-error" id="err-checkin">Please select a check-in date.</span>
+            <label class="form-label" for="checkin-date">Check-in Date <span class="req">*</span></label>
+            <input type="date" class="form-input" id="checkin-date" required aria-required="true" />
+            <p class="form-error" id="err-checkin" role="alert">Please select a check-in date.</p>
           </div>
           <div class="form-group">
-            <label for="f-checkout">Check-Out Date</label>
-            <input type="date" class="form-control" id="f-checkout" required aria-required="true" />
-            <span class="form-error" id="err-checkout">Please select a checkout date after check-in.</span>
+            <label class="form-label" for="checkout-date">Check-out Date <span class="req">*</span></label>
+            <input type="date" class="form-input" id="checkout-date" required aria-required="true" />
+            <p class="form-error" id="err-checkout" role="alert">Please select a checkout date after check-in.</p>
           </div>
         </div>
 
-        <div class="form-row">
+        <div class="form-row single">
           <div class="form-group">
-            <label for="f-guests">Number of Guests</label>
-            <select class="form-control" id="f-guests" required>
+            <label class="form-label" for="num-guests">Number of Guests <span class="req">*</span></label>
+            <select class="form-input" id="num-guests" required>
               <option value="1">1 Guest</option>
               <option value="2" selected>2 Guests</option>
               <option value="3">3 Guests</option>
@@ -116,109 +135,115 @@
               <option value="6">6 Guests</option>
             </select>
           </div>
-          <div class="form-group">
-            <label>Stay Duration</label>
-            <div class="form-control" style="background:var(--ivory); cursor:default;" id="f-nights-display">Select dates above</div>
-          </div>
         </div>
 
-        <!-- Live Price Calc -->
-        <div class="price-calc" id="price-calc" style="display:none;" aria-live="polite">
-          <p class="price-calc-label">Estimated Cost</p>
-          <div class="price-calc-row"><span id="calc-nights-label">Nights</span><span id="calc-subtotal">₹0</span></div>
-          <div class="price-calc-row"><span>Taxes & service charges (18%)</span><span id="calc-tax">₹0</span></div>
-          <div class="price-calc-total"><span>Estimated Total</span><span id="calc-total">₹0</span></div>
+        <!-- Price Calculator -->
+        <div class="price-calc" id="price-calc" aria-live="polite">
+          <p class="price-calc-label">✦ Stay Estimate</p>
+          <div class="price-calc-row">
+            <span id="calc-nights-label">Select dates above</span>
+            <span id="calc-nights-val"></span>
+          </div>
+          <div class="price-calc-row" id="calc-tax-row" style="display:none;">
+            <span>Taxes & Fees (18%)</span>
+            <span id="calc-tax-val"></span>
+          </div>
+          <div class="price-calc-total" id="calc-total-row" style="display:none;">
+            <span>Estimated Total</span>
+            <span id="calc-total-val"></span>
+          </div>
         </div>
 
         <div class="step-buttons">
           <span></span>
-          <button class="btn-gold" id="btn-next-1" type="button">Continue to Guest Details →</button>
+          <button class="btn-gold" id="btn-next-1" type="button">Continue →</button>
         </div>
       </div>
 
-      <!-- STEP 2 -->
-      <div class="booking-step" id="step-2">
-        <h2 class="step-heading">Your Details</h2>
+      <!-- STEP 2 — Guest Details -->
+      <div class="booking-step" id="step-2" role="region" aria-labelledby="step2-heading">
+        <h2 class="step-heading" id="step2-heading">Your Details</h2>
         <p class="step-sub">Tell us about yourself and any special requests.</p>
 
         <div class="form-row">
           <div class="form-group">
-            <label for="f-name">Full Name</label>
-            <input type="text" class="form-control" id="f-name" placeholder="As per ID" required />
-            <span class="form-error" id="err-name">Please enter your full name.</span>
+            <label class="form-label" for="guest-name">Full Name <span class="req">*</span></label>
+            <input type="text" class="form-input" id="guest-name" placeholder="e.g. Priya Sharma" required autocomplete="name" />
+            <p class="form-error" id="err-name" role="alert">Please enter your full name.</p>
           </div>
           <div class="form-group">
-            <label for="f-email">Email Address</label>
-            <input type="email" class="form-control" id="f-email" placeholder="you@example.com" required />
-            <span class="form-error" id="err-email">Please enter a valid email.</span>
+            <label class="form-label" for="guest-email">Email Address <span class="req">*</span></label>
+            <input type="email" class="form-input" id="guest-email" placeholder="you@example.com" required autocomplete="email" />
+            <p class="form-error" id="err-email" role="alert">Please enter a valid email.</p>
           </div>
         </div>
 
         <div class="form-row">
           <div class="form-group">
-            <label for="f-phone">Phone Number</label>
-            <input type="tel" class="form-control" id="f-phone" placeholder="+91 98765 43210" required />
-            <span class="form-error" id="err-phone">Please enter a valid phone number.</span>
+            <label class="form-label" for="guest-phone">Phone Number <span class="req">*</span></label>
+            <input type="tel" class="form-input" id="guest-phone" placeholder="+91 98765 43210" required autocomplete="tel" />
+            <p class="form-error" id="err-phone" role="alert">Please enter a valid phone number.</p>
           </div>
           <div class="form-group">
-            <label for="f-country">Country of Residence</label>
-            <select class="form-control" id="f-country">
+            <label class="form-label" for="guest-country">Country</label>
+            <select class="form-input" id="guest-country" autocomplete="country">
               <option value="India" selected>India</option>
               <option value="United Kingdom">United Kingdom</option>
               <option value="United States">United States</option>
-              <option value="Germany">Germany</option>
-              <option value="France">France</option>
-              <option value="Australia">Australia</option>
               <option value="UAE">UAE</option>
               <option value="Singapore">Singapore</option>
+              <option value="Australia">Australia</option>
               <option value="Canada">Canada</option>
+              <option value="Germany">Germany</option>
+              <option value="France">France</option>
               <option value="Other">Other</option>
             </select>
           </div>
         </div>
 
-        <div class="form-group">
-          <label for="f-requests">Special Requests</label>
-          <textarea class="form-control" id="f-requests" rows="4" placeholder="Dietary preferences, anniversary arrangements, accessibility needs, late arrival…" style="resize:vertical;"></textarea>
-        </div>
-
         <!-- Add-ons -->
-        <div class="form-group" style="margin-top:8px;">
-          <label style="display:block; margin-bottom:16px;">Enhance Your Stay</label>
-          <div class="addons-grid" id="addons-grid">
-            <div class="addon-card" data-addon="airport_transfer" data-price="2500" onclick="toggleAddon(this)">
-              <input type="checkbox" tabindex="-1" />
+        <div class="form-group" style="margin-top:12px;">
+          <label class="form-label">Curated Add-ons</label>
+          <p style="font-size:0.82rem;color:var(--taupe);margin-bottom:16px;">Enhance your stay with these carefully curated experiences.</p>
+          <div class="addons-grid">
+            <label class="addon-card" data-price="2500">
+              <input type="checkbox" name="addon" value="Airport Transfer" data-price="2500" />
               <div class="addon-check"></div>
               <div class="addon-icon">🚗</div>
               <p class="addon-name">Airport Transfer</p>
               <p class="addon-price">₹2,500</p>
               <p class="addon-desc">Private car from Kathgodam or Pantnagar</p>
-            </div>
-            <div class="addon-card" data-addon="spa_package" data-price="5000" onclick="toggleAddon(this)">
-              <input type="checkbox" tabindex="-1" />
+            </label>
+            <label class="addon-card" data-price="5000">
+              <input type="checkbox" name="addon" value="Spa Package" data-price="5000" />
               <div class="addon-check"></div>
-              <div class="addon-icon">💆</div>
+              <div class="addon-icon">🧘</div>
               <p class="addon-name">Spa Package</p>
               <p class="addon-price">₹5,000</p>
               <p class="addon-desc">2-hour Himalayan herbal massage per person</p>
-            </div>
-            <div class="addon-card" data-addon="candlelight_dinner" data-price="3500" onclick="toggleAddon(this)">
-              <input type="checkbox" tabindex="-1" />
+            </label>
+            <label class="addon-card" data-price="3500">
+              <input type="checkbox" name="addon" value="Candlelight Dinner" data-price="3500" />
               <div class="addon-check"></div>
               <div class="addon-icon">🕯️</div>
               <p class="addon-name">Candlelight Dinner</p>
               <p class="addon-price">₹3,500</p>
               <p class="addon-desc">Private terrace dining under the stars</p>
-            </div>
-            <div class="addon-card" data-addon="adventure_package" data-price="4000" onclick="toggleAddon(this)">
-              <input type="checkbox" tabindex="-1" />
+            </label>
+            <label class="addon-card" data-price="4000">
+              <input type="checkbox" name="addon" value="Adventure Package" data-price="4000" />
               <div class="addon-check"></div>
-              <div class="addon-icon">🏔️</div>
+              <div class="addon-icon">🥾</div>
               <p class="addon-name">Adventure Package</p>
               <p class="addon-price">₹4,000</p>
               <p class="addon-desc">Forest trek + star observatory experience</p>
-            </div>
+            </label>
           </div>
+        </div>
+
+        <div class="form-group" style="margin-top:8px;">
+          <label class="form-label" for="special-requests">Special Requests</label>
+          <textarea class="form-input" id="special-requests" rows="4" placeholder="Dietary requirements, anniversary celebrations, accessibility needs…" style="resize:vertical;"></textarea>
         </div>
 
         <div class="step-buttons">
@@ -227,93 +252,169 @@
         </div>
       </div>
 
-      <!-- STEP 3 -->
-      <div class="booking-step" id="step-3">
-        <h2 class="step-heading">Review & Confirm</h2>
+      <!-- STEP 3 — Confirm -->
+      <div class="booking-step" id="step-3" role="region" aria-labelledby="step3-heading">
+        <h2 class="step-heading" id="step3-heading">Review & Confirm</h2>
         <p class="step-sub">Please review your booking details before confirming.</p>
 
-        <div class="summary-box" id="summary-box" aria-label="Booking summary">
+        <div class="summary-box" id="booking-summary" aria-label="Booking summary">
           <h3 class="summary-title">Booking Summary</h3>
-          <div class="summary-row"><span class="summary-row-label">Retreat</span><span class="summary-row-val" id="sum-dest">—</span></div>
-          <div class="summary-row"><span class="summary-row-label">Room</span><span class="summary-row-val" id="sum-room">—</span></div>
+          <div class="summary-row"><span class="summary-row-label">Retreat</span><span class="summary-row-val" id="sum-retreat">—</span></div>
           <div class="summary-row"><span class="summary-row-label">Dates</span><span class="summary-row-val" id="sum-dates">—</span></div>
-          <div class="summary-row"><span class="summary-row-label">Duration</span><span class="summary-row-val" id="sum-nights">—</span></div>
+          <div class="summary-row"><span class="summary-row-label">Duration</span><span class="summary-row-val" id="sum-duration">—</span></div>
           <div class="summary-row"><span class="summary-row-label">Guests</span><span class="summary-row-val" id="sum-guests">—</span></div>
           <div class="summary-row"><span class="summary-row-label">Guest Name</span><span class="summary-row-val" id="sum-name">—</span></div>
           <div class="summary-row"><span class="summary-row-label">Email</span><span class="summary-row-val" id="sum-email">—</span></div>
           <div class="summary-row"><span class="summary-row-label">Phone</span><span class="summary-row-val" id="sum-phone">—</span></div>
           <div class="summary-row"><span class="summary-row-label">Country</span><span class="summary-row-val" id="sum-country">—</span></div>
-          <div class="summary-row" id="sum-addons-row" style="display:none;"><span class="summary-row-label">Add-ons</span><span class="summary-row-val" id="sum-addons">—</span></div>
+          <div class="summary-row" id="sum-addons-row"><span class="summary-row-label">Add-ons</span><span class="summary-row-val" id="sum-addons">None</span></div>
           <div class="summary-row" id="sum-requests-row" style="display:none;"><span class="summary-row-label">Special Requests</span><span class="summary-row-val" id="sum-requests">—</span></div>
-          <div class="summary-row"><span class="summary-row-label">Accommodation</span><span class="summary-row-val" id="sum-acc">—</span></div>
-          <div class="summary-row"><span class="summary-row-label">Add-ons Total</span><span class="summary-row-val" id="sum-addons-total">—</span></div>
-          <div class="summary-row"><span class="summary-row-label">Taxes (18%)</span><span class="summary-row-val" id="sum-tax">—</span></div>
-        </div>
-        <div class="summary-grand-total">
-          <span class="summary-grand-label">Total Amount</span>
-          <span class="summary-grand-val" id="sum-grand">₹0</span>
         </div>
 
-        <p style="font-size:0.82rem; color:var(--taupe); margin-top:20px; line-height:1.7;">
-          By confirming, you agree to our <a href="#" style="color:var(--gold);">Terms of Stay</a> and <a href="#" style="color:var(--gold);">Cancellation Policy</a>. 
-          Free cancellation up to 7 days before arrival. No payment is collected now — our concierge will contact you within 4 hours to confirm.
+        <div class="summary-grand-total" style="margin-top:0;">
+          <div>
+            <p class="summary-grand-label">Accommodation</p>
+            <p style="font-size:0.8rem;color:rgba(255,255,255,0.5);margin-top:4px;" id="sum-acc-breakdown">—</p>
+          </div>
+          <span class="summary-grand-val" id="sum-acc-val">₹0</span>
+        </div>
+        <div style="background:var(--ivory);border:1px solid var(--stone);padding:16px 20px;display:flex;justify-content:space-between;align-items:center;font-size:0.85rem;">
+          <span style="color:var(--taupe);">Add-ons Total</span>
+          <span style="font-weight:700;" id="sum-addons-val">₹0</span>
+        </div>
+        <div style="background:var(--ivory);border:1px solid var(--stone);border-top:none;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;font-size:0.85rem;">
+          <span style="color:var(--taupe);">Taxes (18%)</span>
+          <span style="font-weight:700;" id="sum-tax-val">₹0</span>
+        </div>
+        <div class="summary-grand-total" style="margin-top:2px;">
+          <span class="summary-grand-label">Total Amount</span>
+          <span class="summary-grand-val" id="sum-total-val">₹0</span>
+        </div>
+
+        <p style="font-size:0.8rem;color:var(--taupe);margin-top:20px;line-height:1.7;padding:16px;background:rgba(200,169,110,0.06);border-left:3px solid var(--gold);">
+          By confirming, you agree to our <a href="#" style="color:var(--gold);">Terms of Stay</a> and <a href="#" style="color:var(--gold);">Cancellation Policy</a>. Free cancellation up to 7 days before arrival. <strong>No payment is collected now</strong> — our concierge will contact you within 4 hours to confirm.
         </p>
 
         <div class="step-buttons">
           <button class="btn-back" id="btn-back-3" type="button">← Back</button>
-          <button class="btn-gold" id="btn-confirm" type="button">Confirm Booking ✦</button>
+          <button class="btn-gold" id="btn-confirm" type="button">
+            <span id="confirm-btn-text">Confirm Booking ✦</span>
+          </button>
         </div>
       </div>
 
-    </div><!-- /booking-form-area -->
+    </div><!-- /form-area -->
 
-    <!-- Sidebar -->
-    <aside class="booking-sidebar" aria-label="Booking preview">
+    <!-- ── Sticky Sidebar ── -->
+    <aside class="booking-sidebar" aria-label="Booking details sidebar">
       <div class="booking-summary-card">
         <div class="booking-summary-card-img">
-          <img src="https://www.genspark.ai/api/files/s/9dBT4k1w" alt="Nitara Stays retreat preview" id="sidebar-img" loading="lazy" />
+          <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80"
+               alt="Selected retreat preview"
+               id="sidebar-img"
+               loading="lazy" />
         </div>
         <div class="booking-summary-card-body">
           <p class="booking-summary-card-name" id="sidebar-name">Select a retreat to begin</p>
           <div class="booking-summary-detail">
             <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M12 2C8.686 2 6 4.686 6 8c0 5.25 6 13 6 13s6-7.75 6-13c0-3.314-2.686-6-6-6z"/><circle cx="12" cy="8" r="2"/></svg>
-            Mukteshwar, Uttarakhand
+            <span>Dhanachuli, Mukteshwar, Uttarakhand</span>
           </div>
-          <div class="booking-summary-detail" id="sidebar-dates">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            Select your dates
+          <div class="booking-summary-detail">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <span id="sidebar-dates">Dates not selected</span>
+          </div>
+          <div class="booking-summary-detail">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+            <span id="sidebar-guests">2 Guests</span>
           </div>
           <div class="booking-trust-items">
-            <div class="booking-trust-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Free cancellation up to 7 days</div>
-            <div class="booking-trust-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M9 12l2 2 4-4"/><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>No hidden fees</div>
-            <div class="booking-trust-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Concierge response within 4 hours</div>
-            <div class="booking-trust-item"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>Direct WhatsApp support</div>
+            <div class="booking-trust-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span>Free cancellation up to 7 days prior</span>
+            </div>
+            <div class="booking-trust-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <span>No payment collected now</span>
+            </div>
+            <div class="booking-trust-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              <span>Concierge confirms within 4 hours</span>
+            </div>
           </div>
         </div>
       </div>
     </aside>
 
   </div><!-- /booking-layout -->
+</div><!-- /booking-page -->
 
-  <!-- Success Modal -->
-  <div class="booking-modal-overlay" id="booking-modal" role="dialog" aria-modal="true" aria-label="Booking confirmed">
-    <div class="booking-modal">
-      <div class="modal-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
-      <h2 class="modal-title">Booking Received</h2>
-      <p class="modal-sub">Thank you. Our mountain concierge will contact you within 4 hours to confirm your stay.</p>
-      <div class="modal-ref">
-        <span>Your Booking Reference</span>
-        <span id="modal-ref-code">ARP—</span>
+<!-- ── Success Modal ── -->
+<div class="booking-modal-overlay" id="booking-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="booking-modal">
+    <div class="modal-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+    </div>
+    <h2 class="modal-title" id="modal-title">Booking Received</h2>
+    <p class="modal-sub">Your sanctuary awaits. Our concierge will reach out within 4 hours to confirm your stay.</p>
+    <div class="modal-ref">
+      <span>Your Booking Reference</span>
+      <span id="modal-ref-num">NIT-XXXXXX</span>
+    </div>
+    <a href="index.html" class="btn-gold modal-close">Return to Home</a>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer id="footer" role="contentinfo">
+  <div class="footer-top">
+    <div class="footer-brand-col">
+      <p class="footer-logo">NITARA <span>STAYS</span></p>
+      <p class="footer-tagline">Where the Himalayas Begin</p>
+      <p class="footer-desc">A curated mountain sanctuary in Mukteshwar, Dhanachuli — at 2,286 metres, where Himalayan peaks frame every horizon.</p>
+    </div>
+    <div class="footer-col">
+      <p class="footer-col-title">Navigate</p>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="experiences.html">Experiences</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <p class="footer-col-title">Contact</p>
+      <div class="footer-contact-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M12 2C8.686 2 6 4.686 6 8c0 5.25 6 13 6 13s6-7.75 6-13c0-3.314-2.686-6-6-6z"/><circle cx="12" cy="8" r="2"/></svg>
+        <span>Dhanachuli, Mukteshwar, Uttarakhand 263136</span>
       </div>
-      <p style="font-size:0.82rem; color:var(--taupe); margin-bottom:20px;">A confirmation email has been sent to <strong id="modal-email"></strong></p>
-      <a href="index.html" class="btn-gold modal-close">Return to Home</a>
+      <div class="footer-contact-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        <span>+91 98765 43210</span>
+      </div>
+      <div class="footer-contact-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span>hello@nitarastays.com</span>
+      </div>
     </div>
   </div>
+  <div class="footer-bottom">
+    <span>© 2026 Nitara Stays. All rights reserved.</span>
+    <div style="display:flex;gap:24px;">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Stay</a>
+    </div>
+  </div>
+</footer>
 
-</main>
-
-<button id="scroll-top" aria-label="Scroll to top"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><polyline points="18 15 12 9 6 15"/></svg></button>
-<a href="https://wa.me/919876543210" id="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.996 0C5.372 0 0 5.373 0 12c0 2.127.558 4.122 1.529 5.857L.057 23.879a.5.5 0 00.611.637l6.228-1.63A11.947 11.947 0 0011.996 24C18.62 24 24 18.627 24 12S18.62 0 11.996 0zm0 21.818a9.822 9.822 0 01-5.145-1.453l-.368-.22-3.812 1 1.017-3.718-.241-.382A9.802 9.802 0 012.18 12c0-5.418 4.399-9.818 9.816-9.818 5.418 0 9.817 4.4 9.817 9.818s-4.399 9.818-9.817 9.818z"/></svg></a>
+<button id="scroll-top" aria-label="Scroll to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+<a href="https://wa.me/919876543210?text=Hello%2C%20I%27d%20like%20to%20book%20a%20stay%20at%20Nitara%20Stays" id="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.996 0C5.372 0 0 5.373 0 12c0 2.127.558 4.122 1.529 5.857L.057 23.879a.5.5 0 00.611.637l6.228-1.63A11.947 11.947 0 0011.996 24C18.62 24 24 18.627 24 12S18.62 0 11.996 0zm0 21.818a9.822 9.822 0 01-5.145-1.453l-.368-.22-3.812 1 1.017-3.718-.241-.382A9.802 9.802 0 012.18 12c0-5.418 4.399-9.818 9.816-9.818 5.418 0 9.817 4.4 9.817 9.818s-4.399 9.818-9.817 9.818z"/></svg>
+</a>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script src="js/supabase-config.js"></script>
