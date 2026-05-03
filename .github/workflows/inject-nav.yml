@@ -6,7 +6,7 @@ jobs:
   inject:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Inject nav-upgrade.js into all HTML files
         run: |
